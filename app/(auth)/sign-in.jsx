@@ -21,10 +21,10 @@ const SignInScreen = () => {
   const router = useRouter();
 
   const { signIn, setActive, isLoaded } = useSignIn();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const [showPassword, setShowPassword] = useState();
-  const [loading, setLoading] = useState();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSignIn = async () => {
     if (!email || !password) {
@@ -128,7 +128,7 @@ const SignInScreen = () => {
               </Text>
             </TouchableOpacity>
 
-            {/* Sign Up Link */}
+            {/* Sign In Link */}
             <TouchableOpacity
               style={authStyles.linkContainer}
               onPress={() => router.push("/(auth)/sign-up")}
